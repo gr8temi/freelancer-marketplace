@@ -136,3 +136,28 @@ color: #05386B;
     border-radius: 0px;
     bottom:0;
 }
+.freelancer{
+    margin-top:5%;
+}
+.cardinfo{
+    box-shadow: rgba(58, 78, 95, 0.2) 0 2px 16px, rgba(58, 78, 95, 0.05)0 -5px 16px;
+    margin-bottom:5%;
+}
+.cardinfo .member{
+    position: relative;
+    top:-50px;
+    margin-bottom: -50px;
+}
+.cardinfo .member img {
+    width:100px;
+    height:100px;
+    max-width:200px;
+    border-radius:50%;
+    border:3px solid #EDF5E1;
+}
+.cardinfo .heading{
+    -webkit-background-size:cover;
+    background-size: cover;
+    height:100px;
+    background-color: #379683;
+}

@@ -59,11 +59,15 @@ $.ajax({
 
              
                  var string=
-                 `<ul>
-                 <li>`+data.id +`</li>
-                 <li>`+data.firstname+ `</li>
-                 <li>`+data.lastname+ `</li>
-                 </ul>`;
+                 `<center><div class="cardinfo ">
+                 <div class="heading"></div>
+                    <div class="member">
+                        <img class="" src="static/img/user.png"
+                    </div>
+
+                    <p ><b>Name</b>: `+data.firstname+ ` `+data.lastname+`</p>
+                 
+                 </div></center>`;
 
                  // li.innerHTML = 
                  div.append(string);
@@ -74,10 +78,9 @@ $.ajax({
      },
      type:'GET',
  });  
-    
-    $("#show").click(function(){
 
-        $.ajax({
+        // Get Freelancer Skills
+            $.ajax({
  
 
             url:"http://localhost:3000/user/"+query+"?_embed=skills",
@@ -93,16 +96,16 @@ $.ajax({
 
                 var div = $(".skills");
                 skill=data.skills;
+                count=0;
                 for(var i=0; i<=skill.length;i++){
-                    
+                    count++
                     var string=
                     `
-                    <ul>
-                    <li>`+skill[i].id +`</li>
-                    <li>`+skill[i].skill+ `</li>
-                    <li>`+skill[i].rating+ `</li>
+
+                    <p>`+count+ `:<b>Skill: </b>:`+skill[i].skill+ `</p>
+                    <p style="border-bottom:1px solid grey;"><b>  Skill Rating:</b> `+skill[i].rating+ `</p>
                     
-                    </ul>
+                    
                     `;
                     // li.innerHTML = 
                     // localStorage.setItem('user', JSON.stringify(data))
@@ -117,93 +120,85 @@ $.ajax({
             },
             type:'GET',
         });  
-    })
-    $("#pastjob").click(function(){
-
-        $.ajax({
+    // Get FreeLancer Past Jobs
+    $.ajax({
  
 
-            url:"http://localhost:3000/user/"+query+"?_embed=pastJobs",
-            dataType:"json",
-            contentType:'application/json',
-            data:{
-               format: 'json'
-            },
-            // dataType:'jsonp',
-       
-            success:function(data){
-                console.log(data.pastJobs);
+        url:"http://localhost:3000/user/"+query+"?_embed=pastJobs",
+        dataType:"json",
+        contentType:'application/json',
+        data:{
+           format: 'json'
+        },
+        // dataType:'jsonp',
+   
+        success:function(data){
+            console.log(data.pastJobs);
 
-                var div = $(".past-jobs");
-                pastJobs=data.pastJobs;
-                for(var i=0; i<=pastJobs.length;i++){
-                    
-                    var string=
-                    `
-                    <ul>
-                    <li>`+pastJobs[i].id +`</li>
-                    <li>`+pastJobs[i].pastJob+ `</li>
-                    
-                    
-                    </ul>
-                    `;
-                    // li.innerHTML = 
-                    // localStorage.setItem('user', JSON.stringify(data))
-                    div.append(string);
+            var div = $(".past-jobs");
+            pastJob=data.pastJobs;
+            count=0;
+            for(var i=0; i<=pastJob.length;i++){
+                count++
+                var string=
+                `
+
+                <p style="border-bottom:1px solid grey;">`+count+ `:`+pastJob[i].pastJob+ `</p>
                 
-                }
-                       
-                        
-                        
+                
+                `;
+                // li.innerHTML = 
+                // localStorage.setItem('user', JSON.stringify(data))
+                div.append(string);
+            
+            }
+                   
+                    
                     
                 
-            },
-            type:'GET',
-        });  
-    })
-
-    $("#service").click(function(){
-
-        $.ajax({
+            
+        },
+        type:'GET',
+    });  
+    // Get FreeLancer services
+    $.ajax({
  
 
-            url:"http://localhost:3000/user/"+query+"?_embed=services",
-            dataType:"json",
-            contentType:'application/json',
-            data:{
-               format: 'json'
-            },
-            // dataType:'jsonp',
-       
-            success:function(data){
-                console.log(data);
+        url:"http://localhost:3000/user/"+query+"?_embed=services",
+        dataType:"json",
+        contentType:'application/json',
+        data:{
+           format: 'json'
+        },
+        // dataType:'jsonp',
+   
+        success:function(data){
+            console.log(data.services);
 
-                var div = $(".services");
-                services=data.services;
-                for(var i=0; i<services.length;i++){
-                    
-                    var string=
-                    `
-                    <ul>
-                    <li>`+services[i].id +`</li>
-                    <li>`+services[i].title+ `</li>
-                    <li>`+services[i].description+ `</li>
-                    
-                    
-                    </ul>
-                    `;
-                    // li.innerHTML = 
-                    // localStorage.setItem('user', JSON.stringify(data))
-                    div.append(string);
+            var div = $(".services");
+            service=data.services;
+            count=0;
+            for(var i=0; i<=service.length;i++){
+                count++
+                var string=
+                `
+
+                <p >`+count+ `: Title: `+service[i].title+ `</p>
+                <p style="border-bottom:1px solid grey;">Description: `+service[i].description+ `</p>
                 
-                }
-                       
-                        
-                        
+                `;
+                // li.innerHTML = 
+                // localStorage.setItem('user', JSON.stringify(data))
+                div.append(string);
+            
+            }
+                   
+                    
                     
                 
-            },
-            type:'GET',
-        });  
-    })
+            
+        },
+        type:'GET',
+    });  
+    
 })
