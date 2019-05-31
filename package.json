@@ -1,0 +1,23 @@
+{
+  "name": "freelancer-marketplace",
+  "version": "1.0.0",
+  "description": "A freelance marketplace",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gr8temi/freelancer-marketplace.git"
+  },
+  "keywords": [
+    "Freelance",
+    "jobs"
+  ],
+  "author": "Adams Temidire A",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gr8temi/freelancer-marketplace/issues"
+  },
+  "homepage": "https://github.com/gr8temi/freelancer-marketplace#readme"
+}
