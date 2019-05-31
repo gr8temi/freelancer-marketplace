@@ -5,6 +5,9 @@
       "firstname": "Temidire",
       "lastname": "Adams",
       "email": "adamstemii@gmail.com",
+      "address": "No 10B Prince Fadina Snago-Ota Ogun State",
+      "imgUrl": "",
+      "password": "temidire",
       "Address": "No 10B Prince Fadina Snago-Ota Ogun State",
       "imgUrl":""
     },
@@ -13,8 +16,40 @@
       "firstname": "John",
       "lastname": "Peter",
       "email": "john@gmail.com",
+      "address": "No 20CB Sagbo-Ota Ogun State",
+      "imgUrl": "",
+      "password": "john"
+    },
+    {
+      "id": 3
+    },
+    {
+      "firstname": "adams",
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "firstname": "Jide",
+      "lastname": "adams",
+      "email": "adamstemi@gmail.com",
+      "address": "ota square",
+      "imgUrl": "adwidid",
+      "password": "adams",
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9,
       "Address": "No 20CB Sagbo-Ota Ogun State",
       "imgUrl":""
+
     }
   ],
   "skills": [
@@ -80,4 +115,5 @@
       "userId": 1
     }
   ]
+
 }
