@@ -40,8 +40,10 @@ $(document).ready(function(){
         },
         type:'GET', 
     });
+
     var query=location.search.substring(1);
     console.log(query)
+
 $.ajax({
  
 
@@ -200,5 +202,4 @@ $.ajax({
         },
         type:'GET',
     });  
-    
 })
